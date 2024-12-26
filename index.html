@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Incident Report and Response System</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* General Styles */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #000;
+            color: #fff;
+        }
+
+        header {
+            background-color: #111;
+            padding: 10px 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2em;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #fff;
+            border-bottom: 2px solid transparent;
+            transition: border-bottom 0.3s;
+        }
+
+        nav ul li a:hover {
+            border-bottom: 2px solid #fff;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        section {
+            margin-bottom: 40px;
+        }
+
+        section h2 {
+            font-size: 1.5em;
+            border-bottom: 2px solid #555;
+            padding-bottom: 5px;
+            margin-bottom: 20px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        form label {
+            margin-bottom: 5px;
+        }
+
+        form input, form select, form textarea, form button {
+            margin-bottom: 15px;
+            padding: 10px;
+            font-size: 1em;
+            border: 1px solid #555;
+            background-color: #222;
+            color: #fff;
+        }
+
+        form button {
+            background-color: #444;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        form button:hover {
+            background-color: #555;
+        }
+
+        #dashboard, #analytics {
+            background-color: #111;
+            padding: 20px;
+            border-radius: 5px;
+        }
+
+        #liveStats {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .flex-container {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        #report {
+            flex: 1;
+            margin: 10px;
+            min-width: 300px;
+        }
+
+        #analytics {
+            flex: 1;
+            margin: 10px;
+            min-width: 300px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #111;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        @media (max-width: 768px) {
+            .flex-container {
+                flex-direction: column;
+            }
+
+            #report, #analytics {
+                margin: 0 0 20px 0;
+            }
+        }
+    </style>
+    <script src="scripts.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Incident Report and Response System</h1>
+        <nav>
+            <ul>
+                <li><a href="#report">Report Incident</a></li>
+                <li><a href="#dashboard">Dashboard</a></li>
+                <li><a href="#workflow">Response Workflow</a></li>
+                <li><a href="#analytics">Analytics</a></li>
+                <li><a href="#compliance">Compliance</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="flex-container">
+            <!-- Analytics Section -->
+            <section id="analytics">
+                <h2>Analytics</h2>
+                <div id="charts">
+                    <!-- Placeholder for graphs -->
+                    <p>Analytics graphs will appear here.</p>
+                </div>
+            </section>
+
+            <!-- Incident Reporting Section -->
+            <section id="report">
+                <h2>Report an Incident</h2>
+                <form id="incidentForm">
+                    <label for="incidentType">Type of Incident:</label>
+                    <select id="incidentType" name="incidentType" required>
+                        <option value="security">Security</option>
+                        <option value="technical">Technical</option>
+                        <option value="safety">Safety</option>
+                    </select>
+
+                    <label for="severity">Severity:</label>
+                    <select id="severity" name="severity" required>
+                        <option value="low">Low</option>
+                        <option value="medium">Medium</option>
+                        <option value="high">High</option>
+                    </select>
+
+                    <label for="location">Location:</label>
+                    <input type="text" id="location" name="location" required>
+
+                    <label for="description">Description:</label>
+                    <textarea id="description" name="description" required></textarea>
+
+                    <label for="reporter">Your Name:</label>
+                    <input type="text" id="reporter" name="reporter" required>
+
+                    <button type="submit">Submit Report</button>
+                </form>
+            </section>
+        </div>
+
+        <!-- Dashboard Section -->
+        <section id="dashboard">
+            <h2>Dashboard</h2>
+            <div id="liveStats">
+                <h3>Live Statistics</h3>
+                <p>Total Incidents: <span id="totalIncidents">0</span></p>
+                <p>Open Incidents: <span id="openIncidents">0</span></p>
+            </div>
+        </section>
+
+        <!-- Response Workflow Section -->
+        <section id="workflow">
+            <h2>Response Workflow</h2>
+            <ul>
+                <li>Assign incidents to teams or individuals.</li>
+                <li>Update status as Open, In Progress, Resolved, or Closed.</li>
+                <li>Follow predefined response templates.</li>
+            </ul>
+        </section>
+
+        <!-- Compliance Section -->
+        <section id="compliance">
+            <h2>Compliance and Reporting</h2>
+            <p>Ensure data storage compliance with GDPR, HIPAA, and other regulations.</p>
+            <p>Download audit trails and regulatory reports.</p>
+        </section>
+
+        <!-- Mobile App Promotion -->
+        <section id="mobile">
+            <h2>Mobile Accessibility</h2>
+            <p>Download our mobile app for on-the-go incident reporting and response.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Incident Management Solutions. All rights reserved.</p>
+    </footer>
+</body>
+</html>
